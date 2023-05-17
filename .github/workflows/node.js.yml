@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  api-test-postman:
     runs-on: ubuntu-latest
 
     steps:
