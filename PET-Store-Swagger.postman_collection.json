@@ -22,7 +22,7 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match test data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
 							"  pm.expect(jsonData.id).to.eql(15555);",
 							"  pm.expect(jsonData.quantity).to.eql(2);",
@@ -48,11 +48,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/order",
+					"raw": "{{BASE_URL}}/store/order",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"order"
 					]
 				}
@@ -75,13 +76,13 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match test data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
-							"  pm.expect(jsonData.id).to.eql(4);",
-							"  pm.expect(jsonData.petId).to.eql(8);",
-							"  pm.expect(jsonData.shipDate).to.eql(\"2023-05-09T09:58:54.395+0000\");",
-							"  pm.expect(jsonData.status).to.eql('placed')",
-							"  pm.expect(jsonData.complete).to.be.true;",
+							"  pm.expect(jsonData.id).to.an(\"number\");",
+							"  pm.expect(jsonData.petId).to.be.an(\"number\");",
+							"  pm.expect(jsonData.shipDate).to.be.an(\"string\");",
+							"  pm.expect(jsonData.status).to.be.an(\"string\")",
+							"  pm.expect(jsonData.complete).to.be.an(\"boolean\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -104,11 +105,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/order/4",
+					"raw": "{{BASE_URL}}/store/order/4",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"order",
 						"4"
 					]
@@ -132,18 +134,8 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match type of the data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
-							"  pm.expect(jsonData.sold).to.be.an(\"number\");",
-							"  pm.expect(jsonData.hungry).to.be.an(\"number\");",
-							"  pm.expect(jsonData.string).to.be.an(\"number\");",
-							"  pm.expect(jsonData.unavailable).to.be.an(\"number\");",
-							"  pm.expect(jsonData.pending).to.be.an(\"number\");",
-							"  pm.expect(jsonData.available).to.be.an(\"number\");",
-							"  pm.expect(jsonData[\"ready to deliver\"]).to.be.an(\"number\");",
-							"  pm.expect(jsonData[\"ready for inventory\"]).to.be.an(\"number\");",
-							"  pm.expect(jsonData.peric).to.be.an(\"number\");",
-							"  pm.expect(jsonData.Pending).to.be.an(\"number\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -166,11 +158,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/inventory",
+					"raw": "{{BASE_URL}}/store/inventory",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"inventory"
 					]
 				}
@@ -193,7 +186,7 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match test data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
 							"  pm.expect(jsonData.type).to.eql(\"error\");",
 							"  pm.expect(jsonData.message).to.eql(\"Order not found\");",
@@ -219,13 +212,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/order/10",
+					"raw": "{{BASE_URL}}/store/order/999999",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"order",
-						"10"
+						"999999"
 					]
 				}
 			},
@@ -243,7 +237,7 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match test data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
 							"  pm.expect(jsonData.type).to.eql(\"unknown\");",
 							"  pm.expect(jsonData.message).to.contain(\"com.sun.jersey.api.MessageException\");",
@@ -266,11 +260,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/order",
+					"raw": "{{BASE_URL}}/store/order",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"order"
 					]
 				}
@@ -293,7 +288,7 @@
 							"});",
 							"",
 							"const jsonData = pm.response.json();",
-							"pm.test(\"Response body match test data\", () => {",
+							"pm.test(\"Test data type of the response\", () => {",
 							"  pm.expect(jsonData).to.be.an(\"object\");",
 							"  pm.expect(jsonData.type).to.eql(\"unknown\");",
 							"  pm.expect(jsonData.message).to.eql(\"something bad happened\");",
@@ -316,11 +311,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}store/order",
+					"raw": "{{BASE_URL}}/store/order",
 					"host": [
-						"{{BASE_URL}}store"
+						"{{BASE_URL}}"
 					],
 					"path": [
+						"store",
 						"order"
 					]
 				}

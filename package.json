@@ -4,7 +4,7 @@
   "description": "api testing against petstore swagger",
   "main": "index.js",
   "scripts": {
-    "test": "newman run PET-Store-Swagger.postman_collection.json --env-var \"BASE_URL=https://petstore.swagger.io/v2/\" -r html"
+    "test": "newman run PET-Store-Swagger.postman_collection.json --env-var \"BASE_URL=https://petstore.swagger.io/v2\" -r html"
   },
   "author": "Tulio Bandeira Luz",
   "license": "ISC",
