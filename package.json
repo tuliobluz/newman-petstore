@@ -1,0 +1,14 @@
+{
+  "name": "petstore",
+  "version": "1.0.0",
+  "description": "api testing against petstore swagger",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run PET-Store-Swagger.postman_collection.json --env-var \"BASE_URL=https://petstore.swagger.io/v2/\""
+  },
+  "author": "Tulio Bandeira Luz",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.3.2"
+  }
+}
