@@ -37,7 +37,7 @@ jobs:
           retention-days: 15
 
   slack_success_result:
-    needs: [cypress-e2e]
+    needs: [api-test-postman]
     name: Slack Notification
     runs-on: ubuntu-latest
     if: success()
